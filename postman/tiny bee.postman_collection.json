@@ -1,0 +1,734 @@
+{
+	"info": {
+		"_postman_id": "4d0a9bb7-6b88-46ed-830c-5bbeddf86a0e",
+		"name": "tiny bee",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24777361"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\":1,\r\n    \"limit\":20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\":1,\r\n    \"limit\":20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products?productCode=TE0100",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "productCode",
+									"value": "TE0100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Related Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\":1,\r\n    \"limit\":20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/related-products?productCode=TE0100",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"related-products"
+							],
+							"query": [
+								{
+									"key": "productCode",
+									"value": "TE0100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products?productCode=TE0200",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "productCode",
+									"value": "TE0200"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productCode",
+									"value": "TE0100",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Wooden Spining Tops",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Motor Skill Development",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Spin for Fun - Set of 3 colorful spin tops for kids. It's an ageless toy, that you too can spin for fun.",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "dimension",
+									"value": "5 cm x 6.5 cm",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Bhavik/Desktop/51sXoigWbuL._AC_UL640_QL65_.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/products/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "productCode",
+									"value": "TE0100",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Wooden Spining Tops",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Motor Skill Development",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Spin for Fun - Set of 3 colorful spin tops for kids. It's an ageless toy, that you too can spin for fun.",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "dimension",
+									"value": "5 cm x 6.5 cm",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Bhavik/Desktop/51sXoigWbuL._AC_UL640_QL65_.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/products/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Get Cart Items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cart/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_code\": \"TE0400\",\r\n    \"quatity\": \"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cart/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Item From cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cart?product_code=TE0400",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart"
+							],
+							"query": [
+								{
+									"key": "product_code",
+									"value": "TE0400"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wishlist",
+			"item": [
+				{
+					"name": "Get Wishlist Items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/wishlist/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"wishlist",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Wishlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_code\": \"TE0400\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/wishlist/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"wishlist",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Item From wishlist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/wishlist?product_code=123",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"wishlist"
+							],
+							"query": [
+								{
+									"key": "product_code",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Delivery Addresses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/payment/delivery-addresses",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payment",
+								"delivery-addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checkout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"products\": [\r\n        {\r\n            \"product_code\": \"TE0200\",\r\n            \"quatity\": \"1\"\r\n        },\r\n        {\r\n            \"product_code\": \"TE0100\",\r\n            \"quatity\": \"1\"\r\n        }\r\n    ],\r\n    \"deliveryAddressId\":15,\r\n    \"cartId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/payment/checkout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payment",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payment confirmation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"razorpay_order_id\": \"\",\r\n    \"razorpay_payment_id\": \"\",\r\n    \"razorpay_signature\": \"\",\r\n    \"cartId\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/payment/confirmation",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payment",
+								"confirmation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add delivery address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"firstName\": \"Bhavik\",\r\n        \"lastName\": \"Mojidra\",\r\n        \"houseNr\": \"B-4\",\r\n        \"street1\": \"street1\",\r\n        \"street2\": \"street2\",\r\n        \"landmark\": \"some landmark\",\r\n        \"city\": \"Z city\",\r\n        \"district\": \"Z district\",\r\n        \"state\":\"some state\",\r\n        \"country\": \"Somewhere on earth\",\r\n        \"zipcode\":\"567890\",\r\n        \"phone\":\"1234567890\",\r\n        \"one_time_use\":0,\r\n        \"is_default\":1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/payment/delivery-addresses/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payment",
+								"delivery-addresses",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set address as default",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/payment/delivery-addresses?deliveryAddressId=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payment",
+								"delivery-addresses"
+							],
+							"query": [
+								{
+									"key": "deliveryAddressId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete delivery address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/payment/delivery-addresses?deliveryAddressId=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payment",
+								"delivery-addresses"
+							],
+							"query": [
+								{
+									"key": "deliveryAddressId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "verification email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test@user1.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/verification-email",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verification-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test@user1.com\",\r\n    \"otp\":\"352197\",\r\n    \"username\":\"user123\",\r\n    \"password\":\"user123\", \r\n    \"firstname\":\"user\",\r\n    \"lastname\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/create-user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"create-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order History",
+			"item": [
+				{
+					"name": "Get Order History",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\":1,\r\n    \"limit\":20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/order-history/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"order-history",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"test@admin.com\",\r\n    \"password\":\"test123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"test@user.com\",\r\n    \"password\":\"test123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiVTJGc2RHVmtYMTlyNTNzQnd1THZEdFVWck5qRW5sVzhHQ0ZXVVF5N1FRWDNvSHZiMHdSL0MwQzUySkpkYlRQWC9FaVVGMSsyQmFKMmt5SWlNWmE0a1VJcGhTaVVROWZnYlhQOWdUbGcrTmE1MUpWd2E5WDVvK1I1blNjc2dYbWJyT2VONDlpZW5qa0dUY2ZINkY0YkQ1T1ZIakJ3cDlGckVWRmpIbS80ZEVyNkFUK00xSm8vSTkxRnZqa3ZTRk1BRTR2d2dIMkErOFFGaXFxVWQxT0Y4U3BMbkVYK3RyeXRVclU4QldVS2ZXRUtGaFcrTURqSlp2Slg2L2FWak1tWW4veVBsamx4WlRGZmVkclZ0OE1CNWc9PSIsImlhdCI6MTY4OTA5MzM5OCwiZXhwIjoxNjg5MTc5Nzk4fQ.LOOdd7nbQmozZtDBLFWtCnPbHROaliIm8S5WSRvGkts",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "127.0.0.1:3000",
+			"type": "string"
+		}
+	]
+}
